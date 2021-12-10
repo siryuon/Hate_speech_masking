@@ -14,12 +14,31 @@
  * TensorFlow
  * scikit-learn
  * Mecab(KoNLPy)
- * gensim
+ * gensim == 3.8.3
  * pandas
  * matplotlib
- 
+ * tweepy == 3.8.0
+ * eunjeon
+ * tkinter
+
+### Directory
+```
+DataAnalysis_CapstoneDesign
+├── Main
+│   ├── ckpt
+│   ├── MainProgram.py
+│   └── utils.py
+├── Practice
+├── Reports
+├── Works
+│   ├── post.html
+│   └── user.html # user 창
+├── ckpt
+├── image
+└── README.md
+```
 ### Embedding Model
- * FastText
+ * FastText - gensim library
 
 ### Language Model (Base)
  * BiLSTM
@@ -45,6 +64,7 @@
 5. Train models - BiLSTM, RNN, GRU, 1D-CNN, Attention, BERT, KoBERT, ETC...
 6. Predict whether a given sentence is a toxic sentence
 7. Masking toxic words with * by predicting the toxic probability of each word in a sentence
+8. Implement program with tkinter
 
 ### Compare model performance
 | **Model** | **Precision** | **Recall** | **Test Accuracy**
@@ -59,18 +79,20 @@
 | KoBERT|0.71|0.75|0.90 | 0.89   |
 | Attention+BiLSTM+LSTM+GRU|0.86|0.96 | 0.90   |
 | Deeper Attention |0.79|0.98|0.86| 0.89   |
-| Node Change using best Attention| 0.82|0.97|0.88|  
+| Node Change using best Attention| 0.82|0.97|0.88|
+| Attention Refine|0.92|0.95|0.94|
 
 (Batch size=100, epochs=20)
+(* epoch 30 in Attention Refine)
 
 ### Best Model Architecture
 ![image](https://github.com/siryuon/DataAnalysis_CapstoneDesign/blob/081acd73fce5e5f225410adf46e37ca6ce824b53/image/architecture.png)  
 
 ### Best Model Confusion Matrix
-![image](https://github.com/siryuon/DataAnalysis_CapstoneDesign/blob/081acd73fce5e5f225410adf46e37ca6ce824b53/image/confusion.png)  
+![image](https://github.com/siryuon/DataAnalysis_CapstoneDesign/blob/928f79c2e2e03648b1d9808a6a88753a89ade5fa/image/confusion.png)  
 
 ### Masking Example
-1. Normal sentence
+1. Normal Sentence
 ```
 Regexed Text:          이 프로그램이 우리 계획의 시발점이다  
 Tokenized Text:        [['이', '프로그램', '우리', '계획', '시발점']]
@@ -88,6 +110,7 @@ Tokenized Text:        [['이', '프로그램', '우리', '계획', '시발점']
 Original Text:  이 프로그램이 우리 계획의 시발점이다. 
 Masked Text:    이 프로그램이 우리 계획의 시발점이다.
 ```
+
 2. Toxic Sentence
 ```
 Regexed Text:          아 씨발 진짜 개 좆같네
@@ -106,3 +129,11 @@ Tokenized Text:        [['아', '씨발', '진짜', '개', '좆같']]
 Original Text:  아 씨발 진짜 개 좆같네
 Masked Text:    아 ** 진짜 * **네
 ```
+
+### Program Image
+
+1. Normal Sentence  
+![image](https://github.com/siryuon/DataAnalysis_CapstoneDesign/blob/29f79ce96a53bf85cf0511e385fa31cdf0a75a85/image/Example_1.JPG)  
+
+2. Toxic Sentence  
+![image](https://github.com/siryuon/DataAnalysis_CapstoneDesign/blob/29f79ce96a53bf85cf0511e385fa31cdf0a75a85/image/Example_2.JPG)
