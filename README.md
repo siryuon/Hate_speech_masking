@@ -1,5 +1,5 @@
 # Data Analysis Capstone Design (2021-2, KyunhgHee Univ.)
-## TOXIC sentence masking using semi-supervised learning
+## TOXIC sentence masking
 
 ### Author
  * Cho Moon Gi [@siryuon](https://github.com/siryuon)
